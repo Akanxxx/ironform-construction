@@ -132,3 +132,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 console.log('%cIRONFORM', 'font-size:2rem;font-weight:900;color:#e8c547;');
 console.log('%cBuilt to Last.', 'color:#9898a6;');
+// DARK / LIGHT MODE TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check saved preference
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('light');
+  themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light');
+  if (body.classList.contains('light')) {
+    themeToggle.textContent = '☀️';
+    localStorage.setItem('theme', 'light');
+  } else {
+    themeToggle.textContent = '🌙';
+    localStorage.setItem('theme', 'dark');
+  }
+});

@@ -714,4 +714,29 @@ nav a:hover { color: var(--text-primary); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}/* LIGHT MODE */
+body.light {
+  --bg: #f5f5f0;
+  --bg2: #ebebeb;
+  --bg3: #e0e0e0;
+  --surface: #ffffff;
+  --border: #d0d0d0;
+  --text-primary: #0a0a0b;
+  --text-secondary: #444450;
+  --text-muted: #888890;
+}
+
+.theme-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
