@@ -151,4 +151,25 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = '🌙';
     localStorage.setItem('theme', 'dark');
   }
-});
+});// DARK / LIGHT MODE TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+  // Check saved preference
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+
+    if (document.body.classList.contains('light')) {
+      themeToggle.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      themeToggle.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
